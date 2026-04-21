@@ -186,7 +186,7 @@ header.nav nav a.active { color: var(--accent); }
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) 1.3fr;
+  grid-template-columns: minmax(120px, 0.35fr) 1.3fr;
   gap: 1.5rem;
   align-items: center;
 }
@@ -199,7 +199,7 @@ header.nav nav a.active { color: var(--accent); }
 .hero-logo img {
   width: 100%;
   height: auto;
-  max-height: 640px;
+  max-height: 160px;
   object-fit: contain;
   object-position: left bottom;
   filter: drop-shadow(8px 8px 0 var(--ink));
@@ -249,7 +249,7 @@ header.nav nav a.active { color: var(--accent); }
     gap: 1rem;
   }
   .hero-logo img {
-    max-height: 380px;
+    max-height: 120px;
     object-position: center;
   }
   .hero-text { text-align: center; }

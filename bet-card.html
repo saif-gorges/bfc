@@ -203,15 +203,33 @@
   var successBox = document.getElementById('bet-success');
   var eventInput = form.querySelector('input[name="event"]');
 
-  // Auto-sync the event tag from the homepage's current fight night card.
-  // Whichever article on index.html has data-event="..." wins.
-  // Falls back to the hardcoded value in the hidden input if fetch fails.
+  // Auto-sync the event tag from the homepage's soonest upcoming fight night.
+  // Each fight night card on index.html should carry data-event + data-date
+  // (ISO YYYY-MM-DD). We pick the earliest card whose date is today or later.
+  // Falls back to the hardcoded value if fetch fails or nothing is upcoming.
   fetch('index.html', { cache: 'no-cache' })
     .then(function(r){ return r.ok ? r.text() : Promise.reject(); })
     .then(function(html){
       var doc = new DOMParser().parseFromString(html, 'text/html');
-      var el = doc.querySelector('[data-event]');
-      if (el && el.dataset.event) eventInput.value = el.dataset.event;
+      var cards = [].slice.call(doc.querySelectorAll('[data-event][data-date]'));
+      if (!cards.length) return;
+
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      function parseLocalDate(iso) {
+        var p = iso.split('-');
+        return new Date(+p[0], +p[1] - 1, +p[2]);
+      }
+
+      var upcoming = cards
+        .map(function(el){ return { el: el, date: parseLocalDate(el.dataset.date) }; })
+        .filter(function(c){ return c.date >= today; })
+        .sort(function(a, b){ return a.date - b.date; });
+
+      if (upcoming.length) {
+        eventInput.value = upcoming[0].el.dataset.event;
+      }
     })
     .catch(function(){ /* keep fallback value */ });
 

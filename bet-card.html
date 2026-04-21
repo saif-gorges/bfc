@@ -201,6 +201,19 @@
   var submitBtn  = form.querySelector('button[type="submit"]');
   var errorBox   = document.getElementById('bet-error');
   var successBox = document.getElementById('bet-success');
+  var eventInput = form.querySelector('input[name="event"]');
+
+  // Auto-sync the event tag from the homepage's current fight night card.
+  // Whichever article on index.html has data-event="..." wins.
+  // Falls back to the hardcoded value in the hidden input if fetch fails.
+  fetch('index.html', { cache: 'no-cache' })
+    .then(function(r){ return r.ok ? r.text() : Promise.reject(); })
+    .then(function(html){
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var el = doc.querySelector('[data-event]');
+      if (el && el.dataset.event) eventInput.value = el.dataset.event;
+    })
+    .catch(function(){ /* keep fallback value */ });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();

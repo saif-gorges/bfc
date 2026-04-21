@@ -68,11 +68,14 @@ back, and the source site is your only copy.*
 This one's required — the scoreboard page has a visible placeholder until
 you drop this in.
 
-### Logo / Favicon (optional but nice)
-| Save as | Where on the old site |
+### Logo / Favicon
+| File | Status |
 |---|---|
-| `images/logo.png` | Any logo mark you have (from old site or your own files) |
-| `favicon.ico` | A 32×32 version of your logo as a .ico file (use realfavicongenerator.net) |
+| `images/logo.png` | ✅ **Already included** — main hero logo (transparent PNG) |
+| `images/logo-mark.png` | ✅ **Already included** — small nav version |
+| `favicon.png` | ✅ **Already included** — browser tab icon |
+
+If you want a proper multi-resolution `favicon.ico`, generate one from `favicon.png` at [realfavicongenerator.net](https://realfavicongenerator.net).
 
 ---
 

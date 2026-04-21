@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bet Card — Baby Fight Club</title>
 <meta name="description" content="Lock in your 2026 SideBurn bets — pick your champion, pick your round, pick your poison.">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
@@ -188,6 +188,22 @@
   overlay.addEventListener('click',toggle);
   document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
     a.addEventListener('click',function(e){e.preventDefault();this.parentElement.classList.toggle('open');});
+  });
+})();
+</script>
+
+<script>
+(function(){
+  // Universal "checked" state for radio cards — works on every browser,
+  // including ones that don't support :has(). Toggles a .checked class
+  // on the parent .radio-option label whenever a radio changes.
+  document.querySelectorAll('.radio-option input[type=radio]').forEach(function(input){
+    input.addEventListener('change', function(){
+      document.querySelectorAll('input[type=radio][name="' + input.name + '"]').forEach(function(other){
+        var lbl = other.closest('.radio-option');
+        if (lbl) lbl.classList.toggle('checked', other.checked);
+      });
+    });
   });
 })();
 </script>

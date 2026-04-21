@@ -547,9 +547,22 @@ header.nav nav a.active { color: var(--accent); }
   user-select: none;
   position: relative;
   line-height: 1.15;
+  overflow: hidden;
 }
+/* Bulletproof native-radio hide: works on iOS Safari, old Android Chrome, etc. */
 .radio-option input[type=radio] {
   position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   opacity: 0;
   pointer-events: none;
 }
@@ -558,6 +571,8 @@ header.nav nav a.active { color: var(--accent); }
   transform: translate(-2px, -2px);
   box-shadow: 3px 3px 0 var(--ink);
 }
+/* Universal checked state via JS-toggled class — works on every browser */
+.radio-option.checked,
 .radio-option:has(input:checked) {
   background: var(--hot);
   color: var(--paper);

@@ -974,4 +974,45 @@ footer.foot .copyright {
   .section { padding: 2.5rem 1rem; }
   .page-head { padding: 3rem 1rem 1.5rem; }
   .marquee-track { font-size: 0.85rem; }
+
+  /* Bet card — tighten for mobile while keeping visual language */
+  .bet-event-banner {
+    padding: 1.35rem 1rem;
+    margin-bottom: 2rem;
+  }
+  .bet-event-name { text-shadow: 2px 2px 0 var(--hot); }
+  .bet-event-date { font-size: 0.78rem; letter-spacing: 0.08em; }
+
+  .bet-form { gap: 1.75rem; }
+  .bet-q {
+    padding: 1.35rem 1.15rem;
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+  .bet-q label,
+  .bet-q legend {
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+  }
+  .bet-q .bet-hint { font-size: 0.82rem; }
+  .bet-q input[type=text],
+  .bet-q input[type=email] { padding: 0.8rem 0.85rem; }
+
+  .radio-group {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 0.5rem;
+  }
+  .radio-option {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.75rem;
+    min-height: 46px;
+  }
+
+  .btn.btn-big { font-size: 1.05rem; padding: 0.95rem 1.75rem; }
+
+  .bet-success {
+    padding: 2rem 1.25rem;
+    box-shadow: 6px 6px 0 var(--hot);
+    margin: 1.5rem auto;
+  }
+  .bet-error { padding: 0.85rem 1rem; font-size: 0.82rem; }
 }

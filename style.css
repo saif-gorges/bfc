@@ -10,8 +10,8 @@
   --paper: #f1e8d6;
   --paper-dark: #e3d5b8;
   --ink: #0a0908;
-  --hot: #ff2d55;
-  --hot-deep: #c71e3f;
+  --hot: #e4588a;
+  --hot-deep: #c24475;
   --accent: #f9c901;
   --muted: #6f5e4e;
   --tape: rgba(249, 201, 1, 0.7);
@@ -57,7 +57,7 @@ body::after {
   pointer-events: none;
   z-index: 1;
   background:
-    radial-gradient(ellipse at 15% 20%, rgba(255, 45, 85, 0.04), transparent 55%),
+    radial-gradient(ellipse at 15% 20%, rgba(228, 88, 138, 0.04), transparent 55%),
     radial-gradient(ellipse at 85% 80%, rgba(249, 201, 1, 0.05), transparent 55%),
     radial-gradient(ellipse at 50% 100%, rgba(10, 9, 8, 0.08), transparent 70%);
 }
@@ -92,18 +92,17 @@ header.nav {
 }
 
 header.nav .brand {
-  font-family: var(--display);
-  font-size: 1.4rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
   border: none;
   color: var(--paper);
   display: flex;
   align-items: center;
-  gap: 0.6rem;
 }
-header.nav .brand:hover { background: transparent; color: var(--hot); }
-header.nav .brand .dot { color: var(--hot); }
+header.nav .brand:hover { background: transparent; }
+header.nav .brand-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
 
 header.nav nav {
   display: flex;

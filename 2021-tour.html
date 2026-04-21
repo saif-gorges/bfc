@@ -11,6 +11,8 @@
 
 <header class="nav">
   <a href="index.html" class="brand"><img src="images/logo-mark.png" alt="" class="brand-mark">Baby<span class="dot">.</span>Fight<span class="dot">.</span>Club</a>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-overlay"></div>
   <nav aria-label="Main">
     <a href="index.html">Home</a>
     <div class="nav-dropdown">
@@ -115,5 +117,18 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var btn=document.querySelector('.hamburger'),
+      nav=document.querySelector('header.nav nav'),
+      overlay=document.querySelector('.nav-overlay');
+  function toggle(){btn.classList.toggle('open');nav.classList.toggle('open');overlay.classList.toggle('open');}
+  btn.addEventListener('click',toggle);
+  overlay.addEventListener('click',toggle);
+  document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();this.parentElement.classList.toggle('open');});
+  });
+})();
+</script>
 </body>
 </html>

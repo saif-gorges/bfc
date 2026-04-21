@@ -431,13 +431,16 @@ header.nav nav a.active { color: var(--accent); }
    BET CARD — event banner
    ========================================================= */
 .bet-event-banner {
-  max-width: 760px;
-  margin: 0 auto 3rem;
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
   padding: 1.75rem 1.5rem;
   text-align: center;
   border-top: 5px double var(--ink);
   border-bottom: 5px double var(--ink);
   background: var(--paper);
+  box-sizing: border-box;
 }
 .bet-event-kicker {
   font-family: var(--display);

@@ -202,7 +202,7 @@ header.nav nav a.active { color: var(--accent); }
   max-height: 460px;
   object-fit: contain;
   object-position: left bottom;
-  filter: drop-shadow(8px 8px 0 var(--ink));
+  filter: drop-shadow(4px 4px 0 rgba(10,9,8,0.3));
 }
 @keyframes punch {
   0%   { transform: translate(-60px, 40px) rotate(-12deg); opacity: 0; }

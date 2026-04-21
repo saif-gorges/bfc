@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bet Card — Baby Fight Club</title>
+<meta name="description" content="Lock in your 2026 SideBurn bets — pick your champion, pick your round, pick your poison.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+<header class="nav">
+  <a href="index.html" class="brand"><img src="images/logo-mark.png" alt="" class="brand-mark">Baby<span class="dot">.</span>Fight<span class="dot">.</span>Club</a>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-overlay"></div>
+  <nav aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="bet-card.html" class="active">Bet Card</a>
+    <div class="nav-dropdown">
+      <a href="#" aria-haspopup="true">Past Tours</a>
+      <div class="dd-menu">
+        <a href="2025-tour.html">2025 Tour</a>
+        <a href="2024-tour.html">2024 Tour</a>
+        <a href="2023-tour.html">2023 Tour</a>
+        <a href="2022-tour.html">2022 Tour</a>
+        <a href="2021-tour.html">2021 Tour</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="#" aria-haspopup="true">Scoreboards</a>
+      <div class="dd-menu">
+        <a href="2023-scoreboard.html">2023 Scoreboard</a>
+      </div>
+    </div>
+    <a href="child-support.html">Child Support</a>
+  </nav>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>★ LOCK IN YOUR BET ★ LOCK IN YOUR BET ★ LOCK IN YOUR BET ★</span>
+    <span>★ LOCK IN YOUR BET ★ LOCK IN YOUR BET ★ LOCK IN YOUR BET ★</span>
+    <span>★ LOCK IN YOUR BET ★ LOCK IN YOUR BET ★ LOCK IN YOUR BET ★</span>
+  </div>
+</div>
+
+<section class="page-head">
+  <div class="year">Bet<br>Card</div>
+  <h1>Pick Your Champion</h1>
+  <div class="sub">★ 4 For 4 Wins The Prize ★</div>
+</section>
+
+<section class="section">
+  <form id="bet-form" class="bet-form" novalidate>
+    <div class="bet-q">
+      <label for="email">Email</label>
+      <p class="bet-hint">So we can track you down when your babies win.</p>
+      <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@notadadofthisbaby.com">
+    </div>
+
+    <div class="bet-q">
+      <label for="name">What do they call you at ringside?</label>
+      <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
+    </div>
+
+    <fieldset class="bet-q">
+      <legend>Which baby takes the belt?</legend>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="winner" value="Blue Corner Baby" required><span>Blue Corner Baby</span></label>
+        <label class="radio-option"><input type="radio" name="winner" value="Red Corner Baby" required><span>Red Corner Baby</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="bet-q">
+      <legend>What round does it end in?</legend>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="round" value="Round 1" required><span>Round 1</span></label>
+        <label class="radio-option"><input type="radio" name="round" value="Round 2" required><span>Round 2</span></label>
+        <label class="radio-option"><input type="radio" name="round" value="Round 3" required><span>Round 3</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="bet-q">
+      <legend>How does the winner win?</legend>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="method" value="Knock Out" required><span>Knock Out</span></label>
+        <label class="radio-option"><input type="radio" name="method" value="Baby Submission" required><span>Baby Submission</span></label>
+        <label class="radio-option"><input type="radio" name="method" value="Judges Decision" required><span>Judges' Decision</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="bet-q">
+      <legend>What color is the band on Ref Cam's underwear?</legend>
+      <p class="bet-hint">Tiebreaker. Trust your gut. Don't ask him directly.</p>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="referee" value="Red" required><span>Red</span></label>
+        <label class="radio-option"><input type="radio" name="referee" value="Blue" required><span>Blue</span></label>
+        <label class="radio-option"><input type="radio" name="referee" value="Green" required><span>Green</span></label>
+        <label class="radio-option"><input type="radio" name="referee" value="Black" required><span>Black</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="bet-q">
+      <legend>Join the BFC mailing list?</legend>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="mailing" value="Yes" required><span>Yes!!!</span></label>
+        <label class="radio-option"><input type="radio" name="mailing" value="No" required><span>No (but I will regret it)</span></label>
+      </div>
+    </fieldset>
+
+    <div id="bet-error" class="bet-error" hidden>
+      Couldn't lock it in. Check your connection, try again, curse the baby gods.
+    </div>
+
+    <div class="bet-submit-row">
+      <button type="submit" class="btn btn-hot btn-big">Lock It In →</button>
+    </div>
+
+    <p class="bet-fineprint">
+      Nail all four fight questions and you're eligible for the completion bonus. Scoring runs after the bell.
+    </p>
+  </form>
+
+  <div id="bet-success" class="bet-success" hidden>
+    <div class="champ">★ Bet Received ★</div>
+    <h2>BET LOCKED IN.</h2>
+    <p>
+      No take-backs. No refunds. If your babies win, glory awaits.
+      If they don't — that's between you and the void.
+    </p>
+    <div class="btn-row" style="justify-content: center; margin-top: 2rem;">
+      <a class="btn" href="index.html">Back to the chaos</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <h4>Baby Fight Club</h4>
+      <p style="font-family: var(--body); font-size: 0.9rem; line-height: 1.6;">
+        A community arts organization embracing the weird across the Burning Man regional circuit.
+      </p>
+    </div>
+    <div>
+      <h4>Past Tours</h4>
+      <ul>
+        <li><a href="2025-tour.html">2025 Tour</a></li>
+        <li><a href="2024-tour.html">2024 Tour</a></li>
+        <li><a href="2023-tour.html">2023 Tour</a></li>
+        <li><a href="2022-tour.html">2022 Tour</a></li>
+        <li><a href="2021-tour.html">2021 Tour</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Club Info</h4>
+      <ul>
+        <li><a href="2023-scoreboard.html">2023 Scoreboard</a></li>
+        <li><a href="child-support.html">Child Support</a></li>
+        <li><a href="bet-card.html">Bet Card</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">
+    <div>© 2026 Baby Fight Club — All rights reserved.</div>
+    <div>Mischief . Mayhem . Baby Fights</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Nav toggle (consistent with other pages)
+  var btn=document.querySelector('.hamburger'),
+      nav=document.querySelector('header.nav nav'),
+      overlay=document.querySelector('.nav-overlay');
+  function toggle(){btn.classList.toggle('open');nav.classList.toggle('open');overlay.classList.toggle('open');}
+  btn.addEventListener('click',toggle);
+  overlay.addEventListener('click',toggle);
+  document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();this.parentElement.classList.toggle('open');});
+  });
+})();
+</script>
+
+<script>
+(function(){
+  // ===========================================================
+  // Bet card submission → Google Apps Script endpoint
+  // ===========================================================
+  // Replace SCRIPT_URL with your deployed Apps Script web-app URL
+  // (https://script.google.com/macros/s/XXXXXXXXXXX/exec).
+  // Until it's replaced, submissions will fail with a visible error.
+  // ===========================================================
+  var SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+
+  var form       = document.getElementById('bet-form');
+  var submitBtn  = form.querySelector('button[type="submit"]');
+  var errorBox   = document.getElementById('bet-error');
+  var successBox = document.getElementById('bet-success');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // HTML5 validation
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (SCRIPT_URL.indexOf('PASTE_') === 0) {
+      showError('Bet card isn’t wired up yet — endpoint is still the placeholder.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Locking in...';
+    errorBox.hidden = true;
+
+    var data = new FormData(form);
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(data)
+    }).then(function(){
+      // no-cors means we can't read the response, so we assume success
+      // if the request didn't throw a network error.
+      form.hidden = true;
+      successBox.hidden = false;
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }).catch(function(err){
+      showError('Network failed. Refresh and try again.');
+    });
+  });
+
+  function showError(msg){
+    errorBox.textContent = msg;
+    errorBox.hidden = false;
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Lock It In →';
+    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+})();
+</script>
+</body>
+</html>

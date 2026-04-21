@@ -427,6 +427,166 @@ header.nav nav a.active { color: var(--accent); }
   margin-top: 0.3rem;
 }
 
+/* =========================================================
+   BET CARD — form styles
+   ========================================================= */
+.bet-form {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.bet-q {
+  border: 2.5px solid var(--ink);
+  background: var(--paper);
+  padding: 1.35rem 1.5rem;
+  box-shadow: 6px 6px 0 var(--ink);
+  position: relative;
+}
+.bet-q + .bet-q { margin-top: 0; }
+.bet-q label,
+.bet-q legend {
+  font-family: var(--display);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.bet-q .bet-hint {
+  font-family: var(--body);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: -0.35rem;
+  margin-bottom: 0.85rem;
+}
+.bet-q input[type=text],
+.bet-q input[type=email] {
+  width: 100%;
+  font-family: var(--body);
+  font-size: 1rem;
+  padding: 0.7rem 0.85rem;
+  border: 2px solid var(--ink);
+  background: var(--paper-dark);
+  color: var(--ink);
+  outline: none;
+  transition: box-shadow 0.1s, border-color 0.1s, background 0.1s;
+}
+.bet-q input[type=text]:focus,
+.bet-q input[type=email]:focus {
+  border-color: var(--hot);
+  background: var(--paper);
+  box-shadow: 4px 4px 0 var(--hot);
+}
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+.radio-option {
+  cursor: pointer;
+  font-family: var(--heavy);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 2.5px solid var(--ink);
+  background: var(--paper-dark);
+  padding: 0.7rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.1s;
+  margin-bottom: 0 !important;
+  user-select: none;
+}
+.radio-option input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.radio-option:hover {
+  background: var(--paper);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.radio-option:has(input:checked) {
+  background: var(--hot);
+  color: var(--paper);
+  border-color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-1px, -1px);
+}
+.bet-submit-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.btn.btn-big {
+  font-size: 1.15rem;
+  padding: 1rem 2.25rem;
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 4px 4px 0 var(--ink) !important;
+}
+.bet-error {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--accent);
+  color: var(--ink);
+  border: 2.5px solid var(--ink);
+  padding: 1rem 1.25rem;
+  font-family: var(--heavy);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.bet-fineprint {
+  max-width: 680px;
+  margin: 0.25rem auto 0;
+  text-align: center;
+  font-family: var(--body);
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.bet-success {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 3px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 10px 10px 0 var(--hot);
+}
+.bet-success .champ {
+  font-family: var(--display);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--hot);
+  margin-bottom: 0.75rem;
+}
+.bet-success h2 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  color: var(--ink);
+  margin-bottom: 1rem;
+  line-height: 1.05;
+}
+.bet-success p {
+  font-family: var(--body);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
 @media (max-width: 720px) {
   .event { grid-template-columns: 1fr; gap: 1rem; box-shadow: 5px 5px 0 var(--ink); }
   .event::before { display: none; }

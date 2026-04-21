@@ -428,6 +428,43 @@ header.nav nav a.active { color: var(--accent); }
 }
 
 /* =========================================================
+   BET CARD — event banner
+   ========================================================= */
+.bet-event-banner {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  border-top: 5px double var(--ink);
+  border-bottom: 5px double var(--ink);
+  background: var(--paper);
+}
+.bet-event-kicker {
+  font-family: var(--display);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--hot);
+  margin-bottom: 0.65rem;
+}
+.bet-event-name {
+  font-family: var(--display);
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1;
+  color: var(--ink);
+  margin: 0;
+  text-shadow: 3px 3px 0 var(--hot);
+}
+.bet-event-date {
+  font-family: var(--heavy);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.9rem;
+}
+
+/* =========================================================
    BET CARD — form styles
    ========================================================= */
 .bet-form {
@@ -435,45 +472,47 @@ header.nav nav a.active { color: var(--accent); }
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.25rem;
 }
 .bet-q {
-  border: 2.5px solid var(--ink);
+  border: 3px solid var(--ink);
   background: var(--paper);
-  padding: 1.35rem 1.5rem;
-  box-shadow: 6px 6px 0 var(--ink);
+  padding: 1.75rem;
+  box-shadow: 8px 8px 0 var(--ink);
   position: relative;
 }
 .bet-q + .bet-q { margin-top: 0; }
 .bet-q label,
 .bet-q legend {
   font-family: var(--display);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   color: var(--ink);
   display: block;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  padding: 0;
 }
 .bet-q .bet-hint {
   font-family: var(--body);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--muted);
-  margin-top: -0.35rem;
-  margin-bottom: 0.85rem;
+  margin-top: -0.6rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.5;
 }
 .bet-q input[type=text],
 .bet-q input[type=email] {
   width: 100%;
   font-family: var(--body);
   font-size: 1rem;
-  padding: 0.7rem 0.85rem;
+  padding: 0.95rem 1rem;
   border: 2px solid var(--ink);
   background: var(--paper-dark);
   color: var(--ink);
   outline: none;
-  transition: box-shadow 0.1s, border-color 0.1s, background 0.1s;
+  transition: box-shadow 0.15s, border-color 0.15s, background 0.15s;
 }
 .bet-q input[type=text]:focus,
 .bet-q input[type=email]:focus {
@@ -482,8 +521,8 @@ header.nav nav a.active { color: var(--accent); }
   box-shadow: 4px 4px 0 var(--hot);
 }
 .radio-group {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0.65rem;
 }
 .radio-option {
@@ -492,14 +531,19 @@ header.nav nav a.active { color: var(--accent); }
   font-size: 0.82rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  border: 2.5px solid var(--ink);
+  border: 2px solid var(--ink);
   background: var(--paper-dark);
-  padding: 0.7rem 1rem;
-  display: inline-flex;
+  padding: 0.95rem 0.85rem;
+  display: flex;
   align-items: center;
-  transition: all 0.1s;
+  justify-content: center;
+  text-align: center;
+  min-height: 52px;
+  transition: all 0.15s;
   margin-bottom: 0 !important;
   user-select: none;
+  position: relative;
+  line-height: 1.15;
 }
 .radio-option input[type=radio] {
   position: absolute;
@@ -508,24 +552,25 @@ header.nav nav a.active { color: var(--accent); }
 }
 .radio-option:hover {
   background: var(--paper);
-  transform: translate(-1px, -1px);
+  transform: translate(-2px, -2px);
   box-shadow: 3px 3px 0 var(--ink);
 }
 .radio-option:has(input:checked) {
   background: var(--hot);
   color: var(--paper);
   border-color: var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
-  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: translate(-2px, -2px);
 }
 .bet-submit-row {
   display: flex;
   justify-content: center;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
 }
 .btn.btn-big {
-  font-size: 1.15rem;
-  padding: 1rem 2.25rem;
+  font-size: 1.2rem;
+  padding: 1.1rem 2.5rem;
 }
 .btn:disabled {
   opacity: 0.55;
@@ -548,12 +593,13 @@ header.nav nav a.active { color: var(--accent); }
 }
 .bet-fineprint {
   max-width: 680px;
-  margin: 0.25rem auto 0;
+  margin: 1.25rem auto 0;
   text-align: center;
   font-family: var(--body);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--muted);
   letter-spacing: 0.02em;
+  line-height: 1.5;
 }
 .bet-success {
   max-width: 680px;

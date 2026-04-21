@@ -51,6 +51,12 @@
   <div class="sub">★ 4 For 4 Wins The Prize ★</div>
 </section>
 
+<section class="bet-event-banner" aria-live="polite">
+  <div class="bet-event-kicker">★ Now Taking Bets ★</div>
+  <h2 class="bet-event-name" id="bet-event-name">SideBurn 2026</h2>
+  <div class="bet-event-date" id="bet-event-date">Saturday, May 16, 2026</div>
+</section>
+
 <section class="section">
   <form id="bet-form" class="bet-form" novalidate>
     <!-- Event tag: change per show. All submissions for this bet card will be tagged with this value. -->
@@ -228,10 +234,19 @@
         .sort(function(a, b){ return a.date - b.date; });
 
       if (upcoming.length) {
-        eventInput.value = upcoming[0].el.dataset.event;
+        var pick = upcoming[0];
+        var name = pick.el.dataset.event;
+        eventInput.value = name;
+
+        var nameEl = document.getElementById('bet-event-name');
+        var dateEl = document.getElementById('bet-event-date');
+        if (nameEl) nameEl.textContent = name;
+        if (dateEl) dateEl.textContent = pick.date.toLocaleDateString('en-US', {
+          weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
+        });
       }
     })
-    .catch(function(){ /* keep fallback value */ });
+    .catch(function(){ /* keep fallback banner + hidden input value */ });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();

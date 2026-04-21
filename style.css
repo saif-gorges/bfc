@@ -390,6 +390,28 @@ header.nav nav a.active { color: var(--accent); }
   color: var(--hot-deep);
   padding-top: 0.1rem;
 }
+.event .body .schedule .slot.headline {
+  background: var(--hot);
+  color: var(--paper);
+  padding: 0.85rem 0.9rem;
+  margin: 0.55rem -0.3rem;
+  border-bottom: none;
+  font-family: var(--heavy);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.event .body .schedule .slot.headline .time {
+  color: var(--paper);
+  font-size: 0.78rem;
+  padding-top: 0.3rem;
+}
+.event .body .schedule .slot.headline em {
+  font-style: normal;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
 
 .event .stamp {
   font-family: var(--display);

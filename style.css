@@ -988,6 +988,7 @@ footer.foot .copyright {
   .hero { padding: 2.5rem 1rem 2rem; }
   .section { padding: 2.5rem 1rem; }
   .page-head { padding: 3rem 1rem 1.5rem; }
+  .page-head .year { margin-bottom: 0.25rem; }
   .marquee-track { font-size: 0.85rem; }
 
   /* Bet card — tighten for mobile while keeping visual language */

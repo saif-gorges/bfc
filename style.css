@@ -701,6 +701,201 @@ header.nav nav a.active { color: var(--accent); }
   z-index: 2;
 }
 
+/* -------- FIGHTERS / ROSTER -------- */
+.fighters-intro {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-family: var(--body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.fighters-intro a {
+  font-family: var(--heavy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fighters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.fighter {
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 8px 8px 0 var(--ink);
+  position: relative;
+  transition: all 0.18s;
+}
+.fighter:hover {
+  transform: translate(-3px, -3px) rotate(0deg) !important;
+  box-shadow: 12px 12px 0 var(--hot);
+  z-index: 5;
+}
+
+.fighter-num {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  font-family: var(--display);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--hot);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.fighter-stamp {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 2.5px solid var(--hot);
+  color: var(--hot);
+  padding: 0.35rem 0.7rem;
+  margin-bottom: 1.1rem;
+  transform: rotate(-2deg);
+  background: var(--paper);
+}
+.fighter-stamp-champ {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--ink);
+  transform: rotate(3deg);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.fighter-name {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 0.9;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.fighter-alias {
+  font-family: var(--heavy);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed rgba(10,9,8,0.2);
+  position: relative;
+  z-index: 2;
+}
+.fighter-alias em {
+  font-style: normal;
+  color: var(--hot);
+}
+
+.fighter-bio {
+  font-family: var(--body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+.fighter-bio p { margin-bottom: 0.85rem; }
+.fighter-bio p:last-child { margin-bottom: 0; }
+.fighter-bio em {
+  font-style: italic;
+  color: var(--hot-deep);
+  font-weight: 700;
+}
+.fighter-bio .fighter-kicker {
+  font-family: var(--heavy);
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  color: var(--ink);
+  border-top: 2px solid var(--ink);
+  padding-top: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* Dark variant — ink card with pink/cream type */
+.fighter-dark {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 8px 8px 0 var(--hot);
+}
+.fighter-dark:hover { box-shadow: 12px 12px 0 var(--accent); }
+.fighter-dark .fighter-num { color: var(--hot); opacity: 0.4; }
+.fighter-dark .fighter-name { color: var(--paper); }
+.fighter-dark .fighter-alias {
+  color: var(--accent);
+  border-bottom-color: rgba(241,232,214,0.25);
+}
+.fighter-dark .fighter-alias em { color: var(--hot); }
+.fighter-dark .fighter-stamp {
+  background: var(--ink);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.fighter-dark .fighter-stamp-champ {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--accent);
+}
+.fighter-dark .fighter-bio { color: var(--paper); }
+.fighter-dark .fighter-bio em { color: var(--accent); }
+.fighter-dark .fighter-bio .fighter-kicker {
+  color: var(--paper);
+  border-top-color: var(--hot);
+}
+
+/* Hot variant — pink card */
+.fighter-hot {
+  background: var(--hot);
+  color: var(--paper);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+.fighter-hot:hover { box-shadow: 12px 12px 0 var(--ink); }
+.fighter-hot .fighter-num { color: var(--ink); opacity: 0.22; }
+.fighter-hot .fighter-name { color: var(--paper); }
+.fighter-hot .fighter-alias {
+  color: var(--accent);
+  border-bottom-color: rgba(241,232,214,0.4);
+}
+.fighter-hot .fighter-alias em { color: var(--ink); }
+.fighter-hot .fighter-stamp {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.fighter-hot .fighter-bio { color: var(--paper); }
+.fighter-hot .fighter-bio em { color: var(--accent); }
+.fighter-hot .fighter-bio .fighter-kicker {
+  color: var(--paper);
+  border-top-color: var(--paper);
+}
+
+@media (max-width: 720px) {
+  .fighters { gap: 1.5rem; }
+  .fighter {
+    padding: 1.5rem 1.25rem 1.4rem;
+    box-shadow: 5px 5px 0 var(--ink);
+    transform: none !important;
+  }
+  .fighter:hover { box-shadow: 8px 8px 0 var(--hot); }
+  .fighter-dark { box-shadow: 5px 5px 0 var(--hot); }
+  .fighter-dark:hover { box-shadow: 8px 8px 0 var(--accent); }
+  .fighter-hot { box-shadow: 5px 5px 0 var(--ink); }
+  .fighter-num { font-size: 3.25rem; top: 0.4rem; right: 0.75rem; }
+  .fighter-stamp { font-size: 0.62rem; }
+}
+
 /* -------- DONATE PANEL -------- */
 .donate-panel {
   background: var(--ink);

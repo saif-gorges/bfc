@@ -702,6 +702,20 @@ header.nav nav a.active { color: var(--accent); }
 }
 
 /* -------- FIGHTERS / ROSTER -------- */
+.fighters-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fighters-trophy {
+  display: block;
+  width: clamp(110px, 15vw, 170px);
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(4px 4px 0 var(--hot));
+  transform: rotate(-4deg);
+}
+
 .fighters-intro {
   max-width: 720px;
   margin: 0 auto 3rem;
@@ -727,10 +741,23 @@ header.nav nav a.active { color: var(--accent); }
 .fighter {
   background: var(--paper);
   border: 3px solid var(--ink);
-  padding: 2rem 1.75rem 1.75rem;
+  padding: 0 1.75rem 1.75rem;
   box-shadow: 8px 8px 0 var(--ink);
   position: relative;
   transition: all 0.18s;
+  overflow: hidden;
+}
+
+.fighter-photo {
+  display: block;
+  width: calc(100% + 3.5rem);
+  margin: 0 -1.75rem 1.5rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 25%;
+  border-bottom: 3px solid var(--ink);
+  background: var(--paper-dark);
+  filter: contrast(1.05) saturate(1.05);
 }
 .fighter:hover {
   transform: translate(-3px, -3px) rotate(0deg) !important;
@@ -740,14 +767,20 @@ header.nav nav a.active { color: var(--accent); }
 
 .fighter-num {
   position: absolute;
-  top: 0.6rem;
-  right: 1rem;
+  top: 0.85rem;
+  right: 0.85rem;
   font-family: var(--display);
-  font-size: 4.5rem;
+  font-size: 1.6rem;
   line-height: 1;
-  color: var(--hot);
-  opacity: 0.18;
+  color: var(--ink);
+  background: var(--accent);
+  border: 3px solid var(--ink);
+  padding: 0.45rem 0.65rem 0.35rem;
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: rotate(-6deg);
+  z-index: 3;
   pointer-events: none;
+  letter-spacing: 0.02em;
 }
 
 .fighter-stamp {
@@ -831,7 +864,7 @@ header.nav nav a.active { color: var(--accent); }
   box-shadow: 8px 8px 0 var(--hot);
 }
 .fighter-dark:hover { box-shadow: 12px 12px 0 var(--accent); }
-.fighter-dark .fighter-num { color: var(--hot); opacity: 0.4; }
+.fighter-dark .fighter-num { color: var(--ink); background: var(--accent); border-color: var(--ink); }
 .fighter-dark .fighter-name { color: var(--paper); }
 .fighter-dark .fighter-alias {
   color: var(--accent);
@@ -862,7 +895,7 @@ header.nav nav a.active { color: var(--accent); }
   box-shadow: 8px 8px 0 var(--ink);
 }
 .fighter-hot:hover { box-shadow: 12px 12px 0 var(--ink); }
-.fighter-hot .fighter-num { color: var(--ink); opacity: 0.22; }
+.fighter-hot .fighter-num { color: var(--paper); background: var(--ink); border-color: var(--ink); }
 .fighter-hot .fighter-name { color: var(--paper); }
 .fighter-hot .fighter-alias {
   color: var(--accent);
@@ -884,9 +917,13 @@ header.nav nav a.active { color: var(--accent); }
 @media (max-width: 720px) {
   .fighters { gap: 1.5rem; }
   .fighter {
-    padding: 1.5rem 1.25rem 1.4rem;
+    padding: 0 1.25rem 1.4rem;
     box-shadow: 5px 5px 0 var(--ink);
     transform: none !important;
+  }
+  .fighter-photo {
+    width: calc(100% + 2.5rem);
+    margin: 0 -1.25rem 1.25rem;
   }
   .fighter:hover { box-shadow: 8px 8px 0 var(--hot); }
   .fighter-dark { box-shadow: 5px 5px 0 var(--hot); }
